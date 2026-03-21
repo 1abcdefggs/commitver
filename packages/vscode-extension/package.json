@@ -2,7 +2,7 @@
   "name": "commitver",
   "displayName": "COMMITVER",
   "description": "Simple commit with automatic versioning",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "publisher": "commitver",
   "repository": {
     "type": "git",
