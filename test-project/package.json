@@ -1,0 +1,13 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "Simple test project for workspace functionality",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo 'Test project is working!'"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
+}
