@@ -3,31 +3,45 @@
 # Increment patch version (no tag, no commit)
 npm version patch --no-git-tag-version
 
-# Get current version
-CURRENT_VERSION=$(node -p "require('./package.json').version")
+# Get current version and update all packages using Node.js
+node -e "
+const fs = require('fs');
+const path = require('path');
 
-# Update all package.json files with the same version
-echo "🔄 Updating all package versions to $CURRENT_VERSION"
+// Get current version
+const mainPackage = require('./package.json');
+const currentVersion = mainPackage.version;
+console.log('🔄 Updating all package versions to', currentVersion);
 
-# Update VS Code extension
-if [ -f "packages/vscode-extension/package.json" ]; then
-  sed -i.bak "s/\"version\": \".*\"/\"version\": \"$CURRENT_VERSION\"/" packages/vscode-extension/package.json
-  rm -f packages/vscode-extension/package.json.bak
-fi
+// Update VS Code extension
+const vscodePath = 'packages/vscode-extension/package.json';
+if (fs.existsSync(vscodePath)) {
+  const vscodePackage = require('../' + vscodePath);
+  vscodePackage.version = currentVersion;
+  fs.writeFileSync(vscodePath, JSON.stringify(vscodePackage, null, 2));
+  console.log('✅ Updated VS Code extension to', currentVersion);
+}
 
-# Update core package
-if [ -f "packages/core/package.json" ]; then
-  sed -i.bak "s/\"version\": \".*\"/\"version\": \"$CURRENT_VERSION\"/" packages/core/package.json
-  rm -f packages/core/package.json.bak
-fi
+// Update core package
+const corePath = 'packages/core/package.json';
+if (fs.existsSync(corePath)) {
+  const corePackage = require('../' + corePath);
+  corePackage.version = currentVersion;
+  fs.writeFileSync(corePath, JSON.stringify(corePackage, null, 2));
+  console.log('✅ Updated core package to', currentVersion);
+}
 
-# Update CLI package
-if [ -f "packages/cli/package.json" ]; then
-  sed -i.bak "s/\"version\": \".*\"/\"version\": \"$CURRENT_VERSION\"/" packages/cli/package.json
-  rm -f packages/cli/package.json.bak
-fi
+// Update CLI package
+const cliPath = 'packages/cli/package.json';
+if (fs.existsSync(cliPath)) {
+  const cliPackage = require('../' + cliPath);
+  cliPackage.version = currentVersion;
+  fs.writeFileSync(cliPath, JSON.stringify(cliPackage, null, 2));
+  console.log('✅ Updated CLI package to', currentVersion);
+}
+
+console.log('✅ All package versions updated to', currentVersion);
+"
 
 # Add all updated package.json files to the current commit
 git add package.json package-lock.json packages/*/package.json packages/*/package-lock.json
-
-echo "✅ All package versions updated to $CURRENT_VERSION"
