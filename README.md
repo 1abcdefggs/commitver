@@ -13,8 +13,14 @@ Simple commit with automatic versioning for Visual Studio Code.
 
 1. Open your project in VS Code
 2. Open Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`)
-3. Type "Quick Commit with Version" and select it
-4. Enter your commit message
+3. Type "Quick Commit with Version" and select it.
+4. Enter your commit message.
+※This time, type "Enter".
+And, This includes version information at the time of commit.
+![assets include comit](<assets/Include the version in the commit comment..gif>)
+
+
+
 5. Confirm the commit with the generated version
 
 ## Example
