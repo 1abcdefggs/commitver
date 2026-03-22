@@ -1,7 +1,8 @@
-# COMMITVER github commit version extension
+# commitver-commit-version
 
-Automatically appended with each commit.
-Simple commit with automatic versioning for Visual Studio Code.
+GitHub commit version extension for Visual Studio Code.
+
+Automatically appends version information to each commit with intelligent version management.
 
 ![alt text](<assets/Include the version in the commit comment..gif>)
 
@@ -10,7 +11,7 @@ Simple commit with automatic versioning for Visual Studio Code.
 - **Automatic Versioning**: Automatically increments patch version on each commit
 - **Quick Commit**: One-click commit with version tagging
 - **Package.json Update**: Automatically updates your project's package.json version
-- **Smart Message Formatting**: Formats commit messages as `v1.0.25 Your message`
+- **Smart Message Formatting**: Formats commit messages as `v1.1.0 Your message`
 
 ## How to Use
 
@@ -40,13 +41,13 @@ Sending a comment results in an error.
 
 ```text
 Input: "Fix bug in authentication"
-Output: "v1.0.25 Fix bug in authentication"
+Output: "v1.1.0 Fix bug in authentication"
 ```
 
 The extension will:
 
 - Create a git commit with the versioned message
-- Update your package.json to version 1.0.25
+- Update your package.json to version 1.1.0
 - Show confirmation of both actions
 
 ## Requirements
@@ -59,6 +60,20 @@ The extension will:
 This extension contributes no settings at this time.
 
 ## Release Notes
+
+### 1.1.0
+
+- Migrated repository to goldbash organization
+- Updated all repository URLs to organization
+- Cleaned up project structure
+- Fixed image references for new repository
+- Minor version bump for significant changes
+
+### 1.0.26
+
+- Updated repository URLs to personal GitHub account
+- Enhanced description for better UX
+- Added screenshots for better documentation
 
 ### 1.0.25
 
