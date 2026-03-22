@@ -1,0 +1,62 @@
+{
+  "name": "commitver",
+  "displayName": "COMMITVER",
+  "description": "Simple commit with automatic versioning",
+  "version": "1.0.24",
+  "publisher": "commitver",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldbash/commitver.git"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commitver.quickCommit",
+        "title": "Quick Commit with Version",
+        "category": "COMMITVER"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "commitver.quickCommit"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build": "tsc -p ./",
+    "package": "vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "@commitver/core": "file:../commitver/packages/core/dist"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "20.x",
+    "typescript": "^5.0.0",
+    "@vscode/vsce": "^2.19.0",
+    "@types/jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/goldbash/commitver/issues"
+  },
+  "homepage": "https://github.com/goldbash/commitver#readme"
+}

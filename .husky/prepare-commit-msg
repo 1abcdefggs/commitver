@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Pass the commit message file as an argument to the node script
+node .husky/prepend_version.cjs "$1"
