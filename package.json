@@ -2,7 +2,7 @@
   "name": "commitver",
   "displayName": "COMMITVER",
   "description": "Versions include Major, Minor, and patch. The patch is updated with each comment. Simple commit with automatic versioning - Enhanced for better UX",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "publisher": "commitver",
   "repository": {
     "type": "git",
