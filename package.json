@@ -1,12 +1,12 @@
 {
   "name": "commitver",
   "displayName": "COMMITVER",
-  "description": "Simple commit with automatic versioning - Enhanced for better UX",
+  "description": "Versions include Major, Minor, and patch. The patch is updated with each comment. Simple commit with automatic versioning - Enhanced for better UX",
   "version": "1.0.25",
   "publisher": "commitver",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goldbash/commitver.git"
+    "url": "git+https://github.com/alphabetaset/commitver.git"
   },
   "engines": {
     "vscode": "^1.75.0"
@@ -56,7 +56,7 @@
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/goldbash/commitver/issues"
+    "url": "https://github.com/alphabetaset/commitver/issues"
   },
-  "homepage": "https://github.com/goldbash/commitver#readme"
+  "homepage": "https://github.com/alphabetaset/commitver#readme"
 }
