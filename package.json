@@ -1,7 +1,7 @@
 {
   "name": "commitver",
   "displayName": "COMMITVER",
-  "description": "Simple commit with automatic versioning",
+  "description": "Simple commit with automatic versioning - Enhanced for better UX",
   "version": "1.0.24",
   "publisher": "commitver",
   "repository": {
